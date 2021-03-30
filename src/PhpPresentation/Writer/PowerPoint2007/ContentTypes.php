@@ -123,7 +123,7 @@ class ContentTypes extends AbstractDecoratorWriter
                 $this->writeOverrideContentType($objWriter, '/ppt/charts/chart' . $shapeIndex->getImageIndex() . '.xml', 'application/vnd.openxmlformats-officedocument.drawingml.chart+xml');
             } else {
                 $extension = strtolower($shapeIndex->getExtension());
-                $mimeType = $shapeIndex->getMimeType();
+                $mimeType = $shapeIndex ? $shapeIndex->getMimeType() : 'image/png';
 
                 if (!isset($aMediaContentTypes[$extension])) {
                     $aMediaContentTypes[$extension] = $mimeType;
