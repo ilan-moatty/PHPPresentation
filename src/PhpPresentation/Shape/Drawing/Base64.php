@@ -21,6 +21,8 @@ class Base64 extends AbstractDrawingAdapter
      */
     protected $arrayMimeExtension = array(
         'image/jpeg' => 'jpg',
+        'image/png' => 'png',
+        'image/gif' => 'gif',
     );
 
     /**
@@ -95,6 +97,6 @@ class Base64 extends AbstractDrawingAdapter
         } else {
             $image = getimagesizefromstring($sImage);
         }
-        return is_array($image) ? image_type_to_mime_type($image[2]) : null;
+        return image_type_to_mime_type($image[2]);
     }
 }
