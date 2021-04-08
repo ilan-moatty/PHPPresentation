@@ -156,12 +156,6 @@ abstract class AbstractGraphic extends AbstractShape implements ComparableInterf
      */
     public function setWidth($pValue = 0)
     {
-        // Resize proportional?
-        if ($this->resizeProportional && $pValue != 0) {
-            $ratio         = $this->height / $this->width;
-            $this->height = (int) round($ratio * $pValue);
-        }
-
         // Set width
         $this->width = $pValue;
 
@@ -176,12 +170,6 @@ abstract class AbstractGraphic extends AbstractShape implements ComparableInterf
      */
     public function setHeight($pValue = 0)
     {
-        // Resize proportional?
-        if ($this->resizeProportional && $pValue != 0) {
-            $ratio        = $this->width / $this->height;
-            $this->width = (int) round($ratio * $pValue);
-        }
-
         // Set height
         $this->height = $pValue;
 
